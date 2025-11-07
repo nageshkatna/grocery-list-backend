@@ -1,8 +1,5 @@
----
-
 ## 📘 Grocery List Backend — README.md
 
-```markdown
 # Grocery List Backend
 
 A Django REST API for managing grocery items.  
