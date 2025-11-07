@@ -5,6 +5,8 @@
 A Django REST API for managing grocery items.  
 Provides CRUD endpoints for a single-family grocery list.
 
+### Live example
+http://ec2-3-99-216-136.ca-central-1.compute.amazonaws.com:8080/api/v1/groceryItems/?page=1
 ---
 
 ## Features
