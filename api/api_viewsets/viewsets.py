@@ -12,7 +12,6 @@ class GroceryItemViewSet(viewsets.ModelViewSet):
     pagination_class = GroceryPagination
 
     def create(self, request, *args, **kwargs):
-        # Check if item with same name exists (case-insensitive)
         name = request.data.get('name', '').strip()
         existing_item = GroceryItem.objects.filter(name__iexact=name).first()
         
@@ -22,7 +21,6 @@ class GroceryItemViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_400_BAD_REQUEST
             )
         
-        # If no duplicate found, proceed with creation
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
