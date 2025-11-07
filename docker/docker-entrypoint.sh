@@ -6,6 +6,9 @@ while ! nc -z $DATABASE_HOST $DATABASE_PORT; do
   sleep 0.5
 done
 
+echo "Running tests..."
+python manage.py test api.tests
+
 echo "Running migrations..."
 python manage.py migrate
 

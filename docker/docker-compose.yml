@@ -13,19 +13,6 @@ services:
     networks:
       - webapi_network
 
-  db-test:
-    image: postgres:latest
-    container_name: grocery_list_db_test
-    # restart: always
-    ports:
-      - 5435:5432
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
-    networks:
-      - webapi_network
-
   grocery-list-api:
     build:
       context: ..
