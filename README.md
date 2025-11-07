@@ -46,10 +46,11 @@ python manage.py runserver
 - Create a `.env` file and add
 
 ```bash
-DJANGO_SECRET_KEY=your-secret
-DB_URL=postgres://postgres:postgres@db:5432/postgres
-ALLOWED_HOSTS=localhost,127.0.0.1
-CORS_ALLOWED_ORIGINS=http://localhost:3000
+DATABASE_NAME=<your_postgres_name>
+DATABASE_USER=<your_postgres_user>
+DATABASE_PASSWORD=<your_postgres_password>
+DATABASE_HOST=<your_postgres_host>
+DATABASE_PORT=<your_postgres_port>
 ```
 
 ### Docker
@@ -65,6 +66,30 @@ This will start:
 
 - Django backend (port 8000)
 - PostgreSQL database (port 5432)
+
+# API Endpoints
+
+- `GET /groceryItems/` list all items
+- `POST /groceryItems/` create item
+- `PATCH /groceryItems/` update item to mark purchased
+- `PUT /groceryItems/` update item to edit
+- `DELETE /groceryItems/` delete item
+
+### Example payload
+
+```bash
+{
+  count: 2,
+  current_page: 1,
+  total_pages: 1,
+  next: null,
+  previous: null,
+  results: [
+    { id: "1", name: "Milk", description: "Protien Rich Milk", quantity: 2, unit: "Packs", purchased: false },
+    { id: "2", name: "Bread", description: "Brown Bread", quantity: 2, unit: "Packs", purchased: false },
+  ],
+}
+```
 
 # Testing
 
