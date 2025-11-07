@@ -50,7 +50,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "http://35.183.45.21:5173",
-    "http://ec2-35-183-45-21.ca-central-1.compute.amazonaws.com:5173/"
+    "http://ec2-35-183-45-21.ca-central-1.compute.amazonaws.com:5173",
 ]
 
 ROOT_URLCONF = 'config.urls'
