@@ -5,6 +5,7 @@ class GroceryItem(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=120, unique=True)
     quantity = models.CharField(max_length=60, blank=True)
+    unit = models.CharField(max_length=30, blank=True)
     description = models.TextField(blank=True)
     purchased = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)

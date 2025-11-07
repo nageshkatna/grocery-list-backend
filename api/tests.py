@@ -10,11 +10,13 @@ class GroceryItemModelTests(TestCase):
         """Test creating a grocery item"""
         item = GroceryItem.objects.create(
             name="Test Item",
-            quantity="2 pcs",
+            quantity="2",
+            unit="pieces",
             description="Test description"
         )
         self.assertEqual(item.name, "Test Item")
-        self.assertEqual(item.quantity, "2 pcs")
+        self.assertEqual(item.quantity, "2")
+        self.assertEqual(item.unit, "pieces")
         self.assertEqual(item.description, "Test description")
         self.assertFalse(item.purchased)
         self.assertIsInstance(item.id, uuid.UUID)
